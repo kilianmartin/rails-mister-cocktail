@@ -6,11 +6,7 @@
 
 <%= simple_form_for [@cocktail, @dose], html: { class: "form-decent"} do |f| %>
   <%= f.input :description, collection: dose_descriptions %>
-
-
   <%= f.input :ingredient, collection: ingredient_names %>
-  <!-- missing ingredient generation mechanism -->
-
 
   <%= f.submit "add a dose", class: "btn btn-primary" %>
 <% end %>

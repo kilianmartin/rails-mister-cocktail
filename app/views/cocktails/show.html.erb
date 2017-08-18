@@ -1,5 +1,5 @@
 <div class="cocktail">
-  <h1> <%= @cocktail.name %> </h1>
+  <h1>   <%= link_to raw('<i class="fa fa-chevron-left"></i>'), cocktails_path%> <%= @cocktail.name %> </h1>
 
 
 
@@ -16,6 +16,11 @@
 
 
   <% end %>
-  <%= link_to "<- Back", cocktails_path%>
-  <%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %>
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  <br>
+
+
+<!--   <%= link_to "Add dose & picture", new_cocktail_dose_path(@cocktail) %> -->
+<%= link_to raw('<i class="fa fa-plus-circle"></i> Add dose'), new_cocktail_dose_path(@cocktail) %>
+
 </div>

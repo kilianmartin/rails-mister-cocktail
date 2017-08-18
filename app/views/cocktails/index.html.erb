@@ -5,15 +5,17 @@
 </h1>
 <% @cocktails.each do |cocktail| %>
   <div class="cocktail">
-    <h3> <%= cocktail.name %> </h3>
+    <h3> <%= cocktail.name %> <%= link_to raw('<i class="fa fa-search-plus"></i>'), cocktail_path(cocktail)  %> </h3>
     <p>Includes:
       <% cocktail.doses.each do |dose| %>
          <%= dose.ingredient.name %>,
       <% end %>
     </p>
-    <%= link_to "Details", cocktail_path(cocktail)  %>
+
   </div>
 <% end %>
 
 
 
+
+<%= cl_image_tag("gcziwcu9oojhvajjvgab.jpg") %>

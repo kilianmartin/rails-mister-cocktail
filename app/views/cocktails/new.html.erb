@@ -4,6 +4,9 @@
 
 <%= simple_form_for [@cocktail], html: { class: "form-decent"} do |f| %>
   <%= f.input :name %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+
 
 
 
