@@ -1,2 +1,19 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<h1>Add new cocktail
+<%= link_to raw('<i class="fa fa-plus-circle"></i>'), new_cocktail_path %>
+
+
+</h1>
+<% @cocktails.each do |cocktail| %>
+  <div class="cocktail">
+    <h3> <%= cocktail.name %> </h3>
+    <p>Includes:
+      <% cocktail.doses.each do |dose| %>
+         <%= dose.ingredient.name %>,
+      <% end %>
+    </p>
+    <%= link_to "Details", cocktail_path(cocktail)  %>
+  </div>
+<% end %>
+
+
+
